@@ -12,11 +12,18 @@ require("express-async-errors")
 const path = require("path");
 const { dir } = require("console")
 
+//configuração proxy
+app.set('trust proxy', true);
+
 //middleware
 app.use(express.json())
 app.use(express.static(path.join(__dirname, "public")))
 
 //routes
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "html", "dephar_homepage.html"))
+})
+
 app.get("/dephar", (req,res) => {
     res.sendFile(path.join(__dirname, "public", "html", "dephar_homepage.html"))
 })
@@ -51,12 +58,12 @@ app.use(errorHandlerMiddleware);
 
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 21038;
 
 const start = async () => {
     try {
         await connectBD(process.env.MONGO_URI);
-        app.listen(port, () => {console.log(`O servidor está ouvindo na porta ${port}...`)})
+        app.listen(port, '0.0.0.0', () => {console.log(`O servidor está ouvindo na porta ${port}...`)})
 
     } catch (error) {
         console.log("Connection Failed!");
