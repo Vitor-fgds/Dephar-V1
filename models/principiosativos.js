@@ -5,19 +5,19 @@ const principioSchema = new mongoose.Schema({
     nomeFarmaco: {
         type: String,
         required: true,
-        maxLength: 100
+        //maxLength: 200
     },
 
     nomeQuimico: {
         type: String,
         required: true,
-        maxLength: 150
+        //maxLength: 300
     },
 
     formulaMolecular: {
         type: String,
         required: true,
-        maxLength: 50
+        //maxLength: 100
     },
 
     formulaEstrutural: {
@@ -33,7 +33,7 @@ const principioSchema = new mongoose.Schema({
     classe: {
         type: String,
         required: true,
-        maxLength: 100
+        //maxLength: 200
     },
 
     indicacoesTerapeuticas: {
@@ -49,7 +49,7 @@ const principioSchema = new mongoose.Schema({
     toxicidade: {
         type: String,
         required: false,
-        maxLength: 500
+  		//maxLength: 2500
     },
 
     formasFarmaceuticas: {
@@ -60,7 +60,7 @@ const principioSchema = new mongoose.Schema({
     farmacodinamica: {
         type: String,
         required: true,
-        maxLength: 1000
+        //maxLength: 2500
     },
 
     farmacocinetica: {
@@ -74,7 +74,7 @@ const principioSchema = new mongoose.Schema({
     farmacogenetica: {
         type: String,
         required: false,
-        maxLength: 1000
+        //maxLength: 2500
     },
 
     interacoesMedicamentosas: {
@@ -90,7 +90,7 @@ const principioSchema = new mongoose.Schema({
     armazenamento: {
         type: String,
         required: true,
-        maxLength: 300
+        //maxLength: 600
     },
 
     incompatibilidades: {
@@ -106,13 +106,13 @@ const principioSchema = new mongoose.Schema({
     producao: {
         type: String,
         required: false,
-        maxLength: 500
+        //maxLength: 1000
     },
 
     descarte: {
         type: String,
         required: true,
-        maxLength: 300
+        //maxLength: 900
     },
 
     validadeAnos: {
